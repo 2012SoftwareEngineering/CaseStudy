@@ -61,14 +61,6 @@ public class EditActivity extends Activity {
 		edit_pwd = (EditText) findViewById(R.id.edit_pwd);
 		imageBtn_save = (ImageButton) findViewById(R.id.imageBtn_save);
 
-		imageBtn_save.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-                 
-			}
-		});
 
 	}
 
