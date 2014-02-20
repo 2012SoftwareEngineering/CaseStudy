@@ -1,5 +1,7 @@
 package com.example.demoone;
 
+import domain.businessService.systemManagement.ISystemManagementService;
+import domain.businessService.systemManagement.SystemManagementService;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,12 +17,14 @@ public class LoginAndRegistActivity extends Activity {
 	private Button btn_login, btn_regist; // 按钮变量声明
 	private EditText et_userphone, et_password; // 编辑框变量声明
 	private String userPhone, password;
+	private ISystemManagementService service;
 
 	// Activity生命周期开始
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login_and_regist); // 加载当前Activity显示的页面
+		service = new SystemManagementService();
 		initView(); // 初始化View
 	}
 
