@@ -1,5 +1,6 @@
 package com.example.demoone;
 
+import domain.businessEntity.systemManagement.User;
 import domain.businessService.systemManagement.ISystemManagementService;
 import domain.businessService.systemManagement.SystemManagementService;
 import android.os.Bundle;
@@ -53,7 +54,7 @@ public class LoginAndRegistActivity extends Activity {
 					toast.show();
 				} // 验证用户名密码是否为空
 				else {
-					if (userPhone.equals("123") || password.equals("123")) {
+					if (login(userPhone,password)) {
 						// 实现Activity跳转意图，从LoginAndRegistActivity跳转至MainActivity
 						Intent intent = new Intent(LoginAndRegistActivity.this,
 								MainActivity.class);
@@ -90,5 +91,13 @@ public class LoginAndRegistActivity extends Activity {
 
 			}
 		});
+	}
+	public boolean login(String phone,String password) {
+		User user=service.findUserByPhone(phone);
+		if(user.getPassword().equals(password))
+			return true;
+		else {
+			return false;
+		}
 	}
 }
