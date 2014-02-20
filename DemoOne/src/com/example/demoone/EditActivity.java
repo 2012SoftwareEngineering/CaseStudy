@@ -22,7 +22,7 @@ public class EditActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_edit);
 		//实例化SystemManagementServcie
 		service = new SystemManagementService();
 		//初始化view
@@ -53,8 +53,7 @@ public class EditActivity extends Activity {
 				
 			}
 		});
-		setContentView(R.layout.activity_edit);
-		initView();
+
 	}
 
 	private void initView() {
