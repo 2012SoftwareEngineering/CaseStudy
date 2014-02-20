@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class EditActivity extends Activity {
 
@@ -45,6 +46,9 @@ public class EditActivity extends Activity {
 					Intent intent = new Intent(EditActivity.this,MainActivity.class);
 					//跳转到主界面
 					startActivity(intent);
+				}else {
+					Toast toast = Toast.makeText(EditActivity.this, "注册失败", Toast.LENGTH_SHORT);
+					toast.show();
 				}
 				
 			}
