@@ -172,36 +172,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ll_card_detail_QQ"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10sp"
-                    android:layout_marginRight="10sp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/item_bg"
-                    android:focusable="true"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="QQ"
-                        android:textColor="@color/red"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/tv_watch_card_info_QQ"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:hint="QQ号码"
-                        android:textColor="@color/cardinfo"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/ll_card_detail_professional"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -227,36 +197,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:hint="从事职业"
-                        android:textColor="@color/cardinfo"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_card_detail_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10sp"
-                    android:layout_marginRight="10sp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/item_bg"
-                    android:focusable="true"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="地址"
-                        android:textColor="@color/red"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/tv_watch_card_info_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:hint="地址信息"
                         android:textColor="@color/cardinfo"
                         android:textSize="16sp" />
                 </LinearLayout>

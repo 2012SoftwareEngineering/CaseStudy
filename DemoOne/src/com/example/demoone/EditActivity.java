@@ -45,6 +45,9 @@ public class EditActivity extends Activity {
 					//设置一个Intent
 					Intent intent = new Intent(EditActivity.this,MainActivity.class);
 					//跳转到主界面
+					Bundle bundle = new Bundle();
+					bundle.putString("phone", edit_userPhone.getText().toString());
+					intent.putExtras(bundle);
 					startActivity(intent);
 				}else {
 					Toast toast = Toast.makeText(EditActivity.this, "注册失败", Toast.LENGTH_SHORT);
