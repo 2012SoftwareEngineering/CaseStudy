@@ -83,7 +83,7 @@ public class LoginAndRegistActivity extends Activity {
 
 				// 实现Activity跳转意图，从LoginAndRegistActivity跳转至MainActivity
 				Intent intent = new Intent(LoginAndRegistActivity.this,
-						MainActivity.class);
+						EditActivity.class);
 				startActivity(intent);
 				// 结束当前Activity
 				finish();

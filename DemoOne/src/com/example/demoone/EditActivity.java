@@ -11,13 +11,13 @@ public class EditActivity extends Activity {
 
 	private EditText edit_userName, edit_userPhone, edit_userTel,
 			edit_userEmail, edit_userQQ, edit_userProfessional,
-			edit_userAddress;
+			edit_userAddress,edit_pwd;
 	private ImageButton imageBtn_save;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_edit);
 		initView();
 
 	}
@@ -27,6 +27,7 @@ public class EditActivity extends Activity {
 		edit_userPhone = (EditText) findViewById(R.id.edit_userPhone);
 		edit_userEmail = (EditText) findViewById(R.id.edit_userEmail);
 		edit_userProfessional = (EditText) findViewById(R.id.edit_userProfessional);
+		edit_pwd = (EditText) findViewById(R.id.edit_pwd);
 		imageBtn_save = (ImageButton) findViewById(R.id.imageBtn_save);
 
 		imageBtn_save.setOnClickListener(new OnClickListener() {
