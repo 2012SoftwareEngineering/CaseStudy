@@ -49,6 +49,7 @@ public class EditActivity extends Activity {
 					bundle.putString("phone", edit_userPhone.getText().toString());
 					intent.putExtras(bundle);
 					startActivity(intent);
+					finish();
 				}else {
 					Toast toast = Toast.makeText(EditActivity.this, "×¢²áÊ§°Ü", Toast.LENGTH_SHORT);
 					toast.show();

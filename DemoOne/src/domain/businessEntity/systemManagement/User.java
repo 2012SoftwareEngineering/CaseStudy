@@ -5,7 +5,14 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "T_User")
 public class User {
-	public User(){}
+	public User(){
+		this.id=0;
+		this.email="";
+		this.password="";
+		this.username="";
+		this.userPhone="";
+		this.userProfessional="";
+	}
 	
 	@DatabaseField(generatedId = true)
 	private int id;

@@ -45,7 +45,7 @@ public class SystemManagementService implements ISystemManagementService {
 		if(list.size()>0)
 			return list.get(0);
 		else {
-			return null;
+			return new User();
 		}
 	}
 	

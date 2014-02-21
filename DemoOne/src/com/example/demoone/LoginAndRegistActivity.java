@@ -99,8 +99,7 @@ public class LoginAndRegistActivity extends Activity {
 		User user=service.findUserByPhone(phone);
 		if(user.getPassword().equals(password))
 			return true;
-		else {
+		else 
 			return false;
-		}
 	}
 }
