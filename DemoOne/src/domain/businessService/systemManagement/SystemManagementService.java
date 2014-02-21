@@ -14,7 +14,7 @@ import foundation.data.IDataContext;
 
 /**
  * @author szp-ThinkPad
- *
+ * 实现service接口
  */
 public class SystemManagementService implements ISystemManagementService {
 	private IDataContext ctx=null;
@@ -31,6 +31,9 @@ public class SystemManagementService implements ISystemManagementService {
 		}
 		return false;
 	}
+	/**
+	 * QueryBuilder 查询方法
+	 */
 	@Override
 	public User findUserByPhone(String phone) {
 		List<User> list = null;

@@ -96,6 +96,7 @@ public class LoginAndRegistActivity extends Activity {
 		});
 	}
 	public boolean login(String phone,String password) {
+		//调用service中的方法
 		User user=service.findUserByPhone(phone);
 		if(user.getPassword().equals(password))
 			return true;

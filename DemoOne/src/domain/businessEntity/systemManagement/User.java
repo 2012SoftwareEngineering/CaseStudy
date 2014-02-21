@@ -2,7 +2,7 @@ package domain.businessEntity.systemManagement;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-
+//OR映射标签表明
 @DatabaseTable(tableName = "T_User")
 public class User {
 	public User(){
@@ -13,10 +13,10 @@ public class User {
 		this.userPhone="";
 		this.userProfessional="";
 	}
-	
+	//表列自增长标签
 	@DatabaseField(generatedId = true)
 	private int id;
-	
+	//该列不可为空
 	@DatabaseField(canBeNull = false)
 	private String userPhone;
 	

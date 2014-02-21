@@ -44,10 +44,11 @@ public class EditActivity extends Activity {
 				if(service.saveUser(user)){
 					//设置一个Intent
 					Intent intent = new Intent(EditActivity.this,MainActivity.class);
-					//跳转到主界面
+					//设置Bundle 用于Intent传值
 					Bundle bundle = new Bundle();
 					bundle.putString("phone", edit_userPhone.getText().toString());
 					intent.putExtras(bundle);
+					//跳转到主界面
 					startActivity(intent);
 					finish();
 				}else {
