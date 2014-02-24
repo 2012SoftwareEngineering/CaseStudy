@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--以下为界面布局文件  以登录界面为例-->
+<!--LinearLayout 有两种排列方式，一种为将控件从上往下排列，一种为将控件从左往右排列  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="@drawable/login_bg"   
     android:orientation="vertical" >
 
+    <!-- ImgaeButton、TextView 等这些控件都有自己的id，通过这些id名，能够自动映射到R文件中，这样Activity就能通过id操纵这些控件 -->
+    
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +22,7 @@
             android:layout_height="wrap_content"
             android:background="#FFF45E5E"
             android:src="@drawable/go_back" />
-
+        
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
@@ -25,8 +30,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="移动名片"
+            android:gravity="center"         
+            android:text="用户登录"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />

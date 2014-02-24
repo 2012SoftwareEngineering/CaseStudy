@@ -1,4 +1,6 @@
-package com.example.demoone;
+package ui.caseStudy;
+
+import com.example.demoone.R;
 
 import domain.businessEntity.systemManagement.User;
 import domain.businessService.systemManagement.ISystemManagementService;
@@ -43,7 +45,7 @@ public class EditActivity extends Activity {
 				user.setPassword(edit_pwd.getText().toString());
 				if(service.saveUser(user)){
 					//设置一个Intent
-					Intent intent = new Intent(EditActivity.this,MainActivity.class);
+					Intent intent = new Intent(EditActivity.this,ViewPagerActivity.class);
 					//设置Bundle 用于Intent传值
 					Bundle bundle = new Bundle();
 					bundle.putString("phone", edit_userPhone.getText().toString());

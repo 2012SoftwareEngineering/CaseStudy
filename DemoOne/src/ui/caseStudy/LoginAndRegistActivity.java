@@ -1,4 +1,6 @@
-package com.example.demoone;
+package ui.caseStudy;
+
+import com.example.demoone.R;
 
 import domain.businessEntity.systemManagement.User;
 import domain.businessService.systemManagement.ISystemManagementService;
@@ -57,7 +59,7 @@ public class LoginAndRegistActivity extends Activity {
 					if (login(userPhone,password)) {
 						// 实现Activity跳转意图，从LoginAndRegistActivity跳转至MainActivity
 						Intent intent = new Intent(LoginAndRegistActivity.this,
-								MainActivity.class);
+								ViewPagerActivity.class);
 						Bundle bundle = new Bundle();
 						bundle.putString("phone", userPhone);
 						intent.putExtras(bundle);
