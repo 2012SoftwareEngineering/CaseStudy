@@ -1,5 +1,12 @@
 package ui.caseStudy;
 
+import java.util.List;
+
+import ui.activity.ActivityOfAF4Ad;
+import ui.viewModel.ModelErrorInfo;
+import ui.viewModel.ViewModel;
+import ui.viewModel.SystemManagement.UserModel;
+
 import com.example.demoone.R;
 
 import domain.businessEntity.systemManagement.User;
@@ -15,12 +22,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginAndRegistActivity extends Activity {
+public class LoginAndRegistActivity extends ActivityOfAF4Ad {
 
 	private Button btn_login, btn_regist; // 按钮变量声明
 	private EditText et_userphone, et_password; // 编辑框变量声明
 	private String userPhone, password;
 	private ISystemManagementService service;
+	private UserModel uModel;
 
 	// Activity生命周期开始
 	@Override
@@ -41,6 +49,7 @@ public class LoginAndRegistActivity extends Activity {
 		et_userphone = (EditText) findViewById(R.id.et_userphone);
 		et_password = (EditText) findViewById(R.id.et_password);
 
+		uModel = (UserModel) vm;
 		// 对登录按钮设置相应的点击监听
 		btn_login.setOnClickListener(new OnClickListener() {
 
@@ -49,14 +58,21 @@ public class LoginAndRegistActivity extends Activity {
 				// TODO Auto-generated method stub
 				userPhone = et_userphone.getText().toString(); // 获取输入框中的值
 				password = et_password.getText().toString();
+				uModel.setUserPhone(userPhone);
+				uModel.setPassword(password);
 
-				if (userPhone.equals("") || password.equals("")) {
+				List<ModelErrorInfo> errs = uModel.verifyModel();
+				String msgError = "";
+				for (ModelErrorInfo modelErrorInfo : errs) {
+					msgError += modelErrorInfo.getErrMsg();
+				}
+				if (!msgError.equals("")) {
 					Toast toast = Toast.makeText(LoginAndRegistActivity.this,
-							"用户名密码请填完整", Toast.LENGTH_SHORT);
+							msgError, Toast.LENGTH_SHORT);
 					toast.show();
-				} // 验证用户名密码是否为空
-				else {
-					if (login(userPhone,password)) {
+				}
+				if (msgError.equals("")) {
+					if (login()) {
 						// 实现Activity跳转意图，从LoginAndRegistActivity跳转至MainActivity
 						Intent intent = new Intent(LoginAndRegistActivity.this,
 								ViewPagerActivity.class);
@@ -66,15 +82,15 @@ public class LoginAndRegistActivity extends Activity {
 						startActivity(intent);
 						// 结束当前Activity
 						finish();
-						Toast toast = Toast.makeText(
+						Toast toast2 = Toast.makeText(
 								LoginAndRegistActivity.this, "登录成功",
 								Toast.LENGTH_SHORT);
-						toast.show();
+						toast2.show();
 					} else {
-						Toast toast = Toast.makeText(
+						Toast toast2 = Toast.makeText(
 								LoginAndRegistActivity.this, "用户名或密码错误",
 								Toast.LENGTH_SHORT);
-						toast.show();
+						toast2.show();
 					}
 				}// 验证用户名密码正确性
 			}
@@ -97,12 +113,41 @@ public class LoginAndRegistActivity extends Activity {
 			}
 		});
 	}
-	public boolean login(String phone,String password) {
-		//调用service中的方法
-		User user=service.findUserByPhone(phone);
-		if(user.getPassword().equals(password))
+
+	public boolean login() {
+		// 调用service中的方法
+		String tmp = uModel.getUserPhone();
+		User user = service.findUserByPhone(uModel.getUserPhone());
+		if (user.getPassword().equals(uModel.getPassword()))
 			return true;
-		else 
+		else
 			return false;
+	}
+
+	@Override
+	protected void initControlsAndRegEvent() {
+		initView();
+
+	}
+
+	@Override
+	protected ViewModel initModel() {
+		UserModel uModel = new UserModel();
+		uModel.setUserPhone("");
+		uModel.setPassword("");
+		return uModel;
+	}
+
+	@Override
+	protected void upDateView(ViewModel aVM) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void processViewModelErrorMsg(List<ModelErrorInfo> errsOfVM,
+			String errMsg) {
+		// TODO Auto-generated method stub
+
 	}
 }
