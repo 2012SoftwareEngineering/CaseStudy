@@ -33,7 +33,7 @@ public class MyApplication extends Application {
 		super.onCreate();
 		// 初始化全局变量
 		DATAHELPER = new DataHelper(getApplicationContext(), DATAFILENAME);
-		
+		System.out.println("abc");
 	}
 	//Activity跳转广播接收器类的定义
 		public class ViewFwdRcv extends BroadcastReceiver {
