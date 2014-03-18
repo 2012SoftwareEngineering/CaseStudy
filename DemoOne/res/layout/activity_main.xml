@@ -29,13 +29,14 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10sp"
+                    android:layout_marginLeft="17dp"
                     android:drawableLeft="@drawable/card_title_1"
                     android:drawablePadding="5sp"
                     android:gravity="center_vertical"
                     android:text="姓名"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
+
             </RelativeLayout>
         </LinearLayout>
 
