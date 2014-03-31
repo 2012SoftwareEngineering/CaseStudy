@@ -31,13 +31,13 @@ public class ViewPagerActivity extends Activity {
 
 	List<View> listViews;
 
-	Context context = null;
-	ViewPagerActivity vpa;
+	Context context = null;  //当前上下文环境
+	ViewPagerActivity vpa;   //当前的Activity
 	@SuppressWarnings("deprecation")
-	LocalActivityManager manager = null;
-	TextView tvTab1, tvTab2, tvTab3;
+	LocalActivityManager manager = null;  //Activity管理
+	TextView tvTab1, tvTab2, tvTab3;     //顶部标签
 	TabHost tabHost = null;
-	private ViewPager pager = null;
+	private ViewPager pager = null;       //分页
 	private SharedPreferences sp_userPhone;
 	@SuppressWarnings("deprecation")
 	@Override
@@ -57,19 +57,25 @@ public class ViewPagerActivity extends Activity {
 		editor.commit();
 		
 		vpa = this;
+		//管理当前的Activity
 		manager = new LocalActivityManager(this, true);
 		manager.dispatchCreate(savedInstanceState);
 
+		//找到标签管理
 		tabHost = (TabHost) findViewById(R.id.tabhost);
 		tabHost.setup();
+		//使其管理当前的Activity
 		tabHost.setup(manager);
 
 		context = ViewPagerActivity.this;
 
+		//找到xml上的分页
 		pager = (ViewPager) findViewById(R.id.viewpager);
 
+		//用来存放三个不同的activity页面
 		listViews = new ArrayList<View>();
 
+	     //通过意图来获取要被添加的三个Activity的页面，然后加入的list中
 		Intent intent_main = new Intent(context, MainActivity.class);
 		listViews.add(getView("MainActivity", intent_main));
 		
@@ -79,6 +85,7 @@ public class ViewPagerActivity extends Activity {
 		Intent intent_main3 = new Intent(context, TestThreeActivity.class);
 		listViews.add(getView("TestThreeActivity", intent_main3));
 		
+	     //这里开始是来设置顶部标签的颜色，字体，内容等信息
 		RelativeLayout tabIndicator1 = (RelativeLayout) LayoutInflater.from(
 				this).inflate(R.layout.tabwidget, null);
 		tvTab1 = (TextView) tabIndicator1.findViewById(R.id.tv_title);
@@ -94,6 +101,7 @@ public class ViewPagerActivity extends Activity {
 		tvTab3 = (TextView) tabIndicator3.findViewById(R.id.tv_title);
 		tvTab3.setText("第三个Activity");
 
+		//把设置完的标签加入到tabHost中去管理
 		tabHost.addTab(tabHost.newTabSpec("A").setIndicator(tabIndicator1)
 				.setContent(intent_main));
 		tabHost.addTab(tabHost.newTabSpec("B").setIndicator(tabIndicator2)
@@ -101,6 +109,7 @@ public class ViewPagerActivity extends Activity {
 		tabHost.addTab(tabHost.newTabSpec("C").setIndicator(tabIndicator3)
 				.setContent(intent_main3));
 
+		//设置监听
 		tabHost.setOnTabChangedListener(new OnTabChangeListener() {
 			@Override
 			public void onTabChanged(String tabId) {
@@ -137,6 +146,7 @@ public class ViewPagerActivity extends Activity {
 			}
 		});
 
+		//设置每一页要显示的内容
 		pager.setAdapter(new MyPageAdapter(listViews));
 		pager.setOnPageChangeListener(new OnPageChangeListener() {
 			@Override
@@ -169,6 +179,7 @@ public class ViewPagerActivity extends Activity {
 			this.list = list;
 		}
 
+		//移走之前的页面
 		@Override
 		public void destroyItem(ViewGroup view, int position, Object arg2) {
 			ViewPager pViewPager = ((ViewPager) view);
@@ -183,7 +194,7 @@ public class ViewPagerActivity extends Activity {
 		public int getCount() {
 			return list.size();
 		}
-
+        //加入新的页面
 		@Override
 		public Object instantiateItem(ViewGroup view, int position) {
 			ViewPager pViewPager = ((ViewPager) view);
