@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_blue" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:paddingTop="15sp"
+                    android:src="@drawable/card_title_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/txt_user_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/bg_blue"
+                        android:gravity="left|bottom"
+                        android:paddingLeft="10sp"
+                        android:text="Samuel Hansen"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|top"
+                        android:paddingLeft="10sp"
+                        android:text="@string/name"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_friend_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_one"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="My Friends List"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_discover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_two"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="Discover"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_three"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="My Information"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_five"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="Add"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_notifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_four"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="My Notifications"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_share_for_friends"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_six"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="Share"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_blue"
+                    android:drawableLeft="@drawable/ic_seven"
+                    android:drawablePadding="13sp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15sp"
+                    android:text="Exit"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
