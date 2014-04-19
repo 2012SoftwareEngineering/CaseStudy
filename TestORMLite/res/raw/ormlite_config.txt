@@ -1,0 +1,60 @@
+#
+# generated on 2014/04/19 10:06:29
+#
+# --table-start--
+dataClass=com.example.model.Bicycle
+tableName=T_Bicycle
+# --table-fields-start--
+# --field-start--
+fieldName=bicycleID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=bicycleName
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=student
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.example.model.MealCard
+tableName=T_MealCard
+# --table-fields-start--
+# --field-start--
+fieldName=mealCardID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=student
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.example.model.Student
+tableName=T_Student
+# --table-fields-start--
+# --field-start--
+fieldName=studentID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=studentName
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=school
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=mealCard
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
