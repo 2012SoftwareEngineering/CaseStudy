@@ -26,7 +26,10 @@ public class MealCardService implements IMealCardService {
 				dataContext.getQueryBuilder(MealCard.class, Integer.class);
 		querryMealCard.where().eq("student_id", student.getStudentID());		
 		mList=dataContext.query(MealCard.class, Integer.class, querryMealCard.prepare());
-		return mList.get(0);
+		if(!mList.isEmpty())
+			return mList.get(0);
+		else
+			return null;
 	}
 
 	@Override
